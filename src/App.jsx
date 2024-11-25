@@ -11,6 +11,7 @@ import Home from './pages/home';
 import { initializeApp } from "firebase/app";
 import AddQuiz from './pages/AddQuiz';
 import ViewQuiz from './pages/ViewQuiz';
+import Play from './pages/play';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -51,6 +52,10 @@ const App = () => {
           {
             path:"viewquiz",
             element:<ViewQuiz/>
+          },
+          {
+            path:"play",
+            element:<Play/>
           }
         ]
       },

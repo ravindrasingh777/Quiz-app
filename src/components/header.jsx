@@ -22,6 +22,7 @@ const {logout}=useContext(maincontext)
                             ?<li><Link to={"/login"}>Login</Link></li>
                             :
                             <>
+                              <li><Link to={"/play"}>Play</Link></li>
                               <li><Link to={"/addquiz"}>Add Quiz</Link></li>
                               <li><Link to={"/viewquiz"}>View Quiz</Link></li>
                               <li onClick={logout} ><Link to={"/login"}>Logout</Link></li>

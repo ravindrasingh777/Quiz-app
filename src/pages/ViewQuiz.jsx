@@ -1,31 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue } from "firebase/database";
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { maincontext } from '../components/context';
+import { useContext } from 'react';
 
 
 const ViewQuiz = () => {
     const navigate=useNavigate()
 
-    const[alldata,setalldata]=useState([])
-
-     const fetchdata=()=>{
-        const db = getDatabase();
-        const starCountRef = ref(db, 'quiz/');
-        onValue(starCountRef, (snapshot) => {
-        const data = snapshot.val();
-        const newarray=Object.keys(data).map((d,i)=>{
-          return {id:d,...data[d]}
-        });
-        console.log(newarray)
-        setalldata(newarray)
-     });
-     }
-
-     useEffect(
-        ()=>{
-            fetchdata()
-        },[]
-     )
+    const {alldata} = useContext(maincontext);
 
      useEffect(()=>{
         const lsuser=localStorage.getItem("user");
